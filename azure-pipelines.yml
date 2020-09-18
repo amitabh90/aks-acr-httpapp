@@ -51,3 +51,4 @@ stages:
         inline: 'kubectl apply -f app-dep.yml'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
+        checkLatest: true
