@@ -39,7 +39,15 @@ stages:
           $(tag)
     - task: Kubernetes@1
       inputs:
-        connectionType: 'Kubernetes Service Connection'
-        command: 
+        connectionType: 'Azure Resource Manager'
+        azureSubscriptionEndpoint: 'amitabhdas-azure'
+        azureResourceGroup: 'RGCloud'
+        kubernetesCluster: 'test-aks'
+        useClusterAdmin: true
+        namespace: 'default'
+        command: 'apply'
+        useConfigurationFile: true
+        configuration: 'app-dep.yml'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
+        checkLatest: true
