@@ -47,7 +47,7 @@ stages:
         namespace: 'default'
         command: 'apply'
         useConfigurationFile: true
-        configuration: '$(Build.SourcesDirectory)/app-dep.yml'
+        configuration: 'app-dep.yml'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
         checkLatest: true
