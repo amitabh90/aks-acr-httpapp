@@ -47,8 +47,7 @@ stages:
         namespace: 'default'
         command: 'apply'
         useConfigurationFile: true
-        configurationType: 'inline'
-        inline: 'kubectl apply -f app-dep.yml'
+        configuration: '$(Build.SourcesDirectory)/app-dep.yml'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
         checkLatest: true
