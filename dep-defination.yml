@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ngapp
+  labels:
+    name: ngapp
+spec:
+  template:
+    metadata:
+      name: ngapp
+      labels:
+        name: ngapp
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.19.2
+  replicas: 25
+  selector:
+    matchLabels:
+      name: ngapp
